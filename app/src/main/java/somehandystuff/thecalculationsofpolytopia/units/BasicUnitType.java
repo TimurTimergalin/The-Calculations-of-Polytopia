@@ -127,7 +127,7 @@ public class BasicUnitType extends UnitType{
         }
 
         public BasicUnitType build() {
-            if (!isReady()) throw new RuntimeException();
+            if (!isReady()) throw new RuntimeException("" + hasRange + " " + hasStats);
 
             BasicUnitType ut = new BasicUnitType();
             ut.maxHealth = maxHealth;

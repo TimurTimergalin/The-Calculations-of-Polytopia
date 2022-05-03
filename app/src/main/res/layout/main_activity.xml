@@ -96,7 +96,7 @@
         android:id="@+id/name"
         android:layout_width="275dp"
         android:layout_height="0dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="5dp"
         android:ems="10"
         android:fontFamily="sans-serif"
         android:gravity="center|center_vertical"
@@ -123,4 +123,5 @@
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintStart_toEndOf="@+id/name"
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

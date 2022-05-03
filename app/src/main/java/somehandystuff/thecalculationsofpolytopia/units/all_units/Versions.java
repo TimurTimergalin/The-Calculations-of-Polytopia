@@ -35,7 +35,7 @@ class Ver53 extends AllUnits {
         basicDct.put("Knight", BasicUnitType.TypeBuilder.basicUnit().melee().stats(15, 3.5f, 1).build());
         basicDct.put("Giant", BasicUnitType.TypeBuilder.superUnit().melee().stats(40, 5, 4).build());
 
-        basicDct.put("Nature Bunny", BasicUnitType.TypeBuilder.superUnit().stats(20, 5, 1).build());
+        basicDct.put("Nature Bunny", BasicUnitType.TypeBuilder.superUnit().melee().stats(20, 5, 1).build());
 
         basicDct.put("Amphibian", BasicUnitType.TypeBuilder.basicUnit().melee().stats(10, 2, 1).build());
         basicDct.put("Tridention", BasicUnitType.TypeBuilder.basicUnit().ranged().stats(15, 3, 1).build());
