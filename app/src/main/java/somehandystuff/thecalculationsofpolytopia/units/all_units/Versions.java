@@ -1,5 +1,6 @@
 package somehandystuff.thecalculationsofpolytopia.units.all_units;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -15,7 +16,7 @@ class Ver53 extends AllUnits {
     private final Set<BasicUnitType> canSwim = new HashSet<>();
 
     @Override
-    String version() {
+    public String version() {
         return "Version 53";
     }
 
@@ -83,7 +84,7 @@ class Ver53 extends AllUnits {
         return basicDct.get(key);
     }
 
-    UnitType getContainer(String key) {
+    public UnitType getContainer(String key) {
         return contDct.get(key);
     }
 
@@ -95,6 +96,18 @@ class Ver53 extends AllUnits {
         return new HashMap<>(contDct);
     }
 
+    @Override
+    public String[] unitArray() {
+        String[] res = new String[basicDct.size() + contDct.size()];
+
+        int i = 0;
+
+        for (String ut: basicDct.keySet()) {res[i] = ut;++i;}
+        for (String ut: contDct.keySet()) {res[i] = ut;++i;}
+        Arrays.sort(res);
+        return res;
+    }
+
     public Set<BasicUnitType> copyCanSwim() {return new HashSet<>(canSwim);}
 }
 
@@ -102,23 +115,23 @@ class Ver81 extends AllUnits {
     private final Map<String, BasicUnitType> basicDct;
     private final Map<String, ContainerUnitType> contDct;
 
-    Map<String, BasicUnitType> copyBasic() {
+    public Map<String, BasicUnitType> copyBasic() {
         return new HashMap<>(basicDct);
     }
 
-    Map<String, ContainerUnitType> copyCont() {
+    public Map<String, ContainerUnitType> copyCont() {
         return new HashMap<>(contDct);
     }
 
-    UnitType getBasic(String key) {
+    public UnitType getBasic(String key) {
         return basicDct.get(key);
     }
 
-    UnitType getContainer(String key) {
+    public UnitType getContainer(String key) {
         return contDct.get(key);
     }
 
-    String version() {
+    public String version() {
         return "Version 81 (Beta)";
     }
 
@@ -140,6 +153,18 @@ class Ver81 extends AllUnits {
         dinghySet.add(basicDct.get("Cloak"));
 
         contDct.put("Dinghy", ContainerUnitType.TypeBuilder.peacefulContainer().possibleContains(dinghySet).stats(0, 0.5f).build());
+    }
+
+    @Override
+    public String[] unitArray() {
+        String[] res = new String[basicDct.size() + contDct.size()];
+
+        int i = 0;
+
+        for (String ut: basicDct.keySet()) {res[i] = ut;++i;}
+        for (String ut: contDct.keySet()) {res[i] = ut;++i;}
+        Arrays.sort(res);
+        return res;
     }
 }
 
